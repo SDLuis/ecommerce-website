@@ -52,7 +52,7 @@ jobs:
           path: dist
 
   deploy:
-    needs: [build]
+    needs: [build, lint]
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
