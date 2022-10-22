@@ -30,6 +30,6 @@ export const Minus = () => {
 }
 export const Plus = () => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' fill='green' width='24' height='24' fill-rule='evenodd'><path d='M11 2v9H2v2h9v9h2v-9h9v-2h-9V2Z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' fill='green' width='24' height='24' fillRule='evenodd'><path d='M11 2v9H2v2h9v9h2v-9h9v-2h-9V2Z' /></svg>
   )
 }

@@ -7,12 +7,12 @@ export default function ProductDetailsComponent ({ product }) {
       <div className='product-detail-container flex flex-wrap gap-10 m-7 sm:m-10 mt-6 sm:mt-[60px]'>
         <div>
           <div className='image-container'>
-            <img src={product.img} className='product-detail-image rounded-[15px] bg-[#ebebeb] w-auto h-auto sm:w-[400px] sm:h-[400px] cursor-pointer transform-cpu duration-300 ease-in-out hover:bg-[#f02d34]' />
+            <img src={product.img} className='product-detail-image object-contain rounded-[15px] bg-[#ebebeb] w-auto h-auto sm:w-[400px] sm:h-[400px] cursor-pointer transform-cpu duration-300 ease-in-out hover:bg-[#f02d34]' />
           </div>
         </div>
 
         <div className='product-detail-desc'>
-          <h1 className=''>{product.Product_Name}</h1>
+          <h1 className='text-3xl sm:text-5xl font-bold'>{product.Product_Name}</h1>
           <div className='reviews text-[#f02d34] mt-[10px] flex gap-[5px] items-center'>
             <div className='flex gap-[5px] items-center'>
               <StarFill />

@@ -9,8 +9,7 @@ export default function ProductsComponent ({ product: { img, Product_Name, price
             alt='products'
             src={img}
             width={250}
-            height={250}
-            className='rounded-2xl bg-[#ebebeb] scale-[1,1] transform transition ease-in-out duration-500'
+            className='rounded-2xl h-[250px] object-contain bg-[#ebebeb] scale-[1,1] transform ease-in-out duration-500'
           />
           <p className='font-medium'>{Product_Name}</p>
           <p className='font-extrabold mt-[6px] text-black'>${price}</p>
