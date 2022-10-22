@@ -1,9 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Home from '../components/home';
+import HeroBannerComponent from '../components/herobanner'
+import ProductsComponent from '../components//products'
+import FooterBannerComponent from '../components/footerbanner'
+import { getProduct } from '../services/products.service'
+
+const products = await getProduct()
 ---
 
 <Layout title="Welcome Headphone World">
-	<Home client:visible />
+	<div>
+		<div>
+			{products.length !== 0 ? <HeroBannerComponent products={products.length && products} /> : null}
+			<div class='text-center my-10 mx-0'>
+			  <h2 class='text-[40px] font-extrabold'>Best Seller Products</h2>
+			  <p class='text-base font-extralight'>speaker There are many variations passages</p>
+			</div>
+			<div class='flex flex-wrap justify-center gap-4 mt-5 w-full'>
+			  {products?.map((product: any) => <ProductsComponent product={product} />)}
+			</div>
+			{products.length !== 0 ? <FooterBannerComponent product={products} /> : null}
+		  </div>
+		</div>
 </Layout>
 
