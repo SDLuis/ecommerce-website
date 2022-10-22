@@ -3,21 +3,20 @@ import UseProducts from '../hooks/useProducts'
 import ProductsComponent from './products'
 import FooterBannerComponent from './footerbanner'
 
-export default function Home ({ fetchProducts }) {
-  const { products } = UseProducts()
-  const product = !products ? fetchProducts : products
+export default function Home ({ product }) {
+  const { products } = UseProducts({ product })
 
   return (
     <div>
-      {product.length !== 0 ? <HeroBannerComponent products={product.length && product} /> : null}
+      <HeroBannerComponent products={products} />
       <div className='text-center my-10 mx-0'>
         <h2 className='text-[40px] font-extrabold'>Best Seller Products</h2>
         <p className='text-base font-extralight'>speaker There are many variations passages</p>
       </div>
       <div className='flex flex-wrap justify-center gap-4 mt-5 w-full'>
-        {product?.map((product) => <ProductsComponent key={product.Product_ID} product={product} />)}
+        {products?.map((product) => <ProductsComponent key={product.Product_ID} product={product} />)}
       </div>
-      {product.length !== 0 ? <FooterBannerComponent product={product} /> : null}
+      <FooterBannerComponent product={products} />
     </div>
   )
 }

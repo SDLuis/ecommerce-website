@@ -2,11 +2,10 @@
 import Layout from '../layouts/Layout.astro'
 import { getProduct } from '../services/products.service'
 import Home from '../components/home'
-
 const products = await getProduct()
 ---
 
-<Layout title="Welcome Headphone World">
-	<Home fetchProducts={products} client:visible />
+<Layout title="Headphone World" description="The best site to shop your headphones">
+	<Home product={products} client:visible />
 </Layout>
 
