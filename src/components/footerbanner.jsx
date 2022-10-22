@@ -20,7 +20,7 @@ export default function FooterBannerComponent ({ product }) {
           </div>
 
           <img
-            src={product[6].img} alt='headphones' className='absolute w-[270px] sm:w-auto object-contain h-auto max-h-[490px] h-[250px] top-0 sm:top-[-23%] left-[10%] sm:left-[15%] lg:left-[25%]'
+            src={product[6].img} alt='headphones' className='absolute w-[270px] sm:w-auto sm:h-auto object-contain max-h-[490px] h-[250px] top-0 sm:top-[-23%] left-[10%] sm:left-[15%] lg:left-[25%]'
           />
         </div>
       </div>
