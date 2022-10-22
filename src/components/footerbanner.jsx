@@ -20,7 +20,7 @@ export default function FooterBannerComponent ({ product }) {
           </div>
 
           <img
-            src={product[6].img} alt='headphones' className='absolute top-[-22%] lg:top-[-25%] left-0 sm:left-[15%] lg:left-[25%]'
+            src={product[6].img} alt='headphones' className='absolute w-[250px] sm:w-auto h-auto top-0 sm:top-[-23%] left-[10%] sm:left-[15%] lg:left-[25%]'
           />
         </div>
       </div>
