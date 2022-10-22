@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import ProductDetail from '../../components/productDetail'
+import { getProduct } from '../../services/products.service'
+
+export async function getStaticPaths() {
+  const products = await getProduct();
+  return products.map((p: any, i: any) => {
+    return {
+      params: { id: p.Product_ID.toString() },
+      props: { product: p },
+    };
+  });
+}
+const { product } = Astro.props;
+---
+
+<Layout title="Welcome Headphone World">
+  <ProductDetail product={product} client:visible />
+</Layout>
