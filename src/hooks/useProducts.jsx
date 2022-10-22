@@ -1,6 +1,13 @@
+import { useState, useEffect } from 'react'
+
 import { getProduct } from '../services/products.service'
-const product = await getProduct()
 
 export default function UseProducts () {
-  return { product }
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    getProduct().then((response) => {
+      setProducts(response)
+    })
+  }, [])
+  return { products }
 }
