@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import ProductDetail from '../../components/productDetail'
+import MayLikeComponent from '../../components/maylike';
 import { getProduct } from '../../services/products.service'
+import { get } from 'http';
 
 export async function getStaticPaths() {
   const products = await getProduct();
@@ -13,8 +15,10 @@ export async function getStaticPaths() {
   });
 }
 const { product } = Astro.props;
+const products = await getProduct()
 ---
 
-<Layout title="Welcome Headphone World">
+<Layout title="Product Details" description="Whatever you want to kwow" >
   <ProductDetail product={product} client:visible />
+  <MayLikeComponent products={products} client:visible />
 </Layout>

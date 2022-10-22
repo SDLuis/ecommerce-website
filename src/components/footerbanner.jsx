@@ -1,4 +1,3 @@
-
 export default function FooterBannerComponent ({ product }) {
   return (
     <div className='flex justify-center'>
