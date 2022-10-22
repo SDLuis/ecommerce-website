@@ -5,7 +5,6 @@ import FooterBannerComponent from './footerbanner'
 
 export default function Home () {
   const { products } = UseProducts()
-  console.log(products)
   return (
     <div>
       {products.length !== 0 ? <HeroBannerComponent products={products.length && products} /> : null}

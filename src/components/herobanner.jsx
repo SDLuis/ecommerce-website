@@ -7,7 +7,9 @@ export default function HeroBannerComponent ({ products }) {
         <h1 className='text-white text-[10rem] ml-[-20px] uppercase'>{products[0].largeText}</h1>
         <img className='absolute top-0 right-0 lg:right-[20%] w-[450px] h-[450px]' src={products[0].img} alt='headphones' />
         <div>
-          <button className='rounded-2xl py-[10px] px-[16px] bg-[#f02d34] text-white border-none mt-10 text-lg font-medium cursor-pointer z-[10000]' type='button'>Shop {products[0].Product_Name}</button>
+          <a href={`/products/${products[0].Product_ID}`}>
+            <button className='rounded-2xl py-[10px] px-[16px] bg-[#f02d34] text-black border-none mt-10 text-lg font-medium cursor-pointer z-[10000]' type='button'>Shop {products[0].Product_Name}</button>
+          </a>
           <div className='absolute right-[10%] bottom-[5%] w-[300px] leading-[1.3] flex flex-col text-[#324d67]'>
             <h5 className='mb-3 font-bold text-base hidden md:block self-end'>Description</h5>
             <p className='text-[#5f5f5f] font-thin hidden md:block text-end'>{products[0].description}</p>

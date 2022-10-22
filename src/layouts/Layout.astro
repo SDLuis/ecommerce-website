@@ -1,4 +1,6 @@
 ---
+import FooterComponent from '../components/footer';
+import NavbarComponent from '../components/navbar';
 export interface Props {
 	title: string;
 }
@@ -16,7 +18,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+	<NavbarComponent client:visible />
 		<slot />
+	<FooterComponent client:visible />
 	</body>
 </html>
 <style is:global>

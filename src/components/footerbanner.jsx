@@ -14,11 +14,13 @@ export default function FooterBannerComponent ({ product }) {
             <p className='text-lg'>{product[6].smallText}</p>
             <h3 className='lg:text-6xl md:text-4xl text-3xl font-extrabold'>{product[6].midText}</h3>
             <p className='text-lg text-justify hidden md:block'>{product[6].description}</p>
-            <button className='rounded-[15px] mt-20 py-[10px] px-[16px] bg-white text-red-600 border-none lg:mt-10 text-lg font-medium cursor-pointer' type='button'>SHOP NOW</button>
+            <a href={`/products/${product[6].Product_ID}`}>
+              <button className='rounded-[15px] mt-10 absolute lg:right-[20%] right-5 sm:ml-0 py-[10px] px-[10px] md:px-[40px] bg-white text-red-600 border-none lg:mt-10 text-lg font-medium cursor-pointer' type='button'>SHOP NOW</button>
+            </a>
           </div>
 
           <img
-            src={product[6].img} className='absolute top-[-22%] lg:top-[-25%] left-0 sm:left-[15%] lg:left-[25%]'
+            src={product[6].img} alt='headphones' className='absolute top-[-22%] lg:top-[-25%] left-0 sm:left-[15%] lg:left-[25%]'
           />
         </div>
       </div>
