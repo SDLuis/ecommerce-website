@@ -10,7 +10,13 @@ export const getProduct = async (): Promise<any> => {
       return response.data
     })
 }
-
+export const getProductInCart = async (): Promise<any> => {
+  return await axios
+    .get(`${API_URL}/cart`)
+    .then((response) => {
+      return response.data
+    })
+}
 export const getProductsByType = async (type: string): Promise<any> => {
   return await axios
     .get(`${API_URL}/products/${type}/list`)
@@ -57,7 +63,7 @@ export const findProducts = async (productID: number): Promise<any> => {
     })
 }
 
-export const ownProductss = async (): Promise<any> => {
+export const ownProducts = async (): Promise<any> => {
   return await axios
     .get(`${API_URL}/products/owner`, {
       withCredentials: true
