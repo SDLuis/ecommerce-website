@@ -3,7 +3,44 @@
 @tailwind utilities;
 
 @layer utilities {
-   .pause {
-     animation-play-state: paused;
-   }
+  .pause {
+    animation-play-state: paused;
+  }
+  .scrollbarDark::-webkit-scrollbar {
+    width: 16px;
+    height: 12px;
+  }
+
+  .scrollbarDark::-webkit-scrollbar-track {
+    background: gray;
+  }
+
+  .scrollbarDark::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 100vh;
+    border: 3px solid darkgray;
+  }
+
+  .scrollbarDark::-webkit-scrollbar-thumb:hover {
+    background: #27272a;
+  }
+  .scrollbar::-webkit-scrollbar {
+    width: 16px;
+    height: 12px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: whitesmoke;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: darkgray;
+    border-radius: 100vh;
+    border: 3px solid darkgray;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: gray;
+  }
 }

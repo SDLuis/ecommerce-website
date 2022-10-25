@@ -10,8 +10,8 @@ export default function Home ({ product }) {
     <div>
       <HeroBannerComponent products={products} />
       <div className='text-center my-10 mx-0'>
-        <h2 className='text-[40px] font-extrabold'>Best Seller Products</h2>
-        <p className='text-base font-extralight'>speaker There are many variations passages</p>
+        <h2 className='text-[40px] font-extrabold dark:text-gray-200'>Best Seller Products</h2>
+        <p className='text-base font-extralight dark:text-gray-200'>speaker There are many variations passages</p>
       </div>
       <div className='flex flex-wrap justify-center gap-4 mt-5 w-full'>
         {products?.map((product) => <ProductsComponent key={product.Product_ID} product={product} />)}
