@@ -72,6 +72,15 @@ export const ownProducts = async (): Promise<any> => {
       return response.data
     })
 }
+export const ownProductsInCart = async (): Promise<any> => {
+  return await axios
+    .get(`${API_URL}/cart/owner`, {
+      withCredentials: true
+    })
+    .then((response) => {
+      return response.data
+    })
+}
 
 export const editProducts = async (jobID: number, body: any): Promise<any> => {
   return await axios

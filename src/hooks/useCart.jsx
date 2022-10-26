@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
-import { getProductInCart } from '../services/products.service'
+import { ownProductsInCart } from '../services/products.service'
 
 export default function UseCart () {
   const [showCart, setShowCart] = useState(false)
@@ -8,7 +8,7 @@ export default function UseCart () {
   const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(() => {
-    getProductInCart().then((response) => {
+    ownProductsInCart().then((response) => {
       setProducts(response)
       setTotalPrice(response.reduce((sum, value) => (typeof value.price === 'number' ? (sum + value.price * value.quantity) : sum), 0))
     })

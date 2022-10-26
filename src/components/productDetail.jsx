@@ -3,14 +3,10 @@ import { StarFill, Star, Minus, Plus } from '../components/icons/icons'
 import UseCart from '../hooks/useCart'
 
 export default function ProductDetailsComponent ({ product }) {
-  const { onAdd, Toaster } = UseCart()
+  const { onAdd } = UseCart()
   const [qty, setQty] = useState(1)
   return (
     <div>
-      <Toaster
-        position='top-center'
-        reverseOrder={false}
-      />
       <div className='product-detail-container flex flex-wrap gap-10 m-7 sm:m-10 mt-6 sm:mt-[60px]'>
         <div>
           <div className='image-container'>

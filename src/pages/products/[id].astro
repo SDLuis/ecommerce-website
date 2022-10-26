@@ -1,13 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ProductDetail from '../../components/productDetail'
-import MayLikeComponent from '../../components/maylike';
+import PageProductDetails from '../../components/PageProductDetails';
 import { getProduct } from '../../services/products.service'
-import { get } from 'http';
 
 export async function getStaticPaths() {
   const products = await getProduct();
-  return products.map((p: any, i: any) => {
+  return products.map((p: any) => {
     return {
       params: { id: p.Product_ID.toString() },
       props: { product: p },
@@ -19,6 +17,5 @@ const products = await getProduct()
 ---
 
 <Layout title="Product Details" description="Whatever you want to kwow" >
-  <ProductDetail product={product} client:visible />
-  <MayLikeComponent products={products} client:visible />
+ <PageProductDetails product={product} products={products} client:visible />
 </Layout>
