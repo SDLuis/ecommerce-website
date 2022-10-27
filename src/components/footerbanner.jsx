@@ -1,7 +1,7 @@
 export default function FooterBannerComponent ({ product }) {
   return (
     <div className='flex justify-center'>
-      <div className='py-[100px] px-4 md:px-10 bg-[#f02d34] rounded-2xl relative h-[300px] sm:h-[400px] leading-[1] text-white w-[90%] mt-[120px]'>
+      <div className='py-[100px] px-3 sm:px-10 bg-[#f02d34] rounded-2xl relative h-[300px] sm:h-[400px] leading-[1] text-white w-[90%] mt-[120px]'>
         <div className='flex justify-between'>
           <div className='left md:w-auto w-44 md:h-48 h-44 flex flex-col sm:justify-between'>
             <p>20% OFF</p>

@@ -63,6 +63,49 @@ export const findProducts = async (productID: number): Promise<any> => {
     })
 }
 
+export const findProductsInCart = async (id: number): Promise<any> => {
+  return await axios
+    .get(`${API_URL}/cart/${id}`)
+    .then((response) => {
+      return response.data
+    })
+}
+
+export const addQtyInCart = async (id: number, qty: number): Promise<any> => {
+  return await axios
+    .put(`${API_URL}/cart/addingquantity/${id}`, {
+      quantity: qty
+    }, {
+      withCredentials: true
+    })
+    .then((response) => {
+      return response.data
+    })
+}
+export const EditQtyInCart = async (id: number, qty: number): Promise<any> => {
+  return await axios
+    .put(`${API_URL}/cart/edit/${id}`, {
+      quantity: qty
+    }, {
+      withCredentials: true
+    })
+    .then((response) => {
+      return response.data
+    })
+}
+
+export const lessQtyInCart = async (id: number, qty: number): Promise<any> => {
+  return await axios
+    .put(`${API_URL}/cart/buy/${id}`, {
+      quantity: qty
+    }, {
+      withCredentials: true
+    })
+    .then((response) => {
+      return response.data
+    })
+}
+
 export const ownProducts = async (): Promise<any> => {
   return await axios
     .get(`${API_URL}/products/owner`, {
@@ -77,6 +120,35 @@ export const ownProductsInCart = async (): Promise<any> => {
     .get(`${API_URL}/cart/owner`, {
       withCredentials: true
     })
+    .then((response) => {
+      return response.data
+    })
+}
+
+export const addProductsToCart = async (body: any): Promise<any> => {
+  return await axios
+    .post(`${API_URL}/cart/add`,
+      {
+        Product_ID: body.id,
+        Product_Name: body.name,
+        price: body.price,
+        quantity: body.qty,
+        img: body.img
+      },
+      {
+        withCredentials: true
+      })
+    .then((response) => {
+      return response.data
+    })
+}
+
+export const deleteProductsFromtCart = async (id: any): Promise<any> => {
+  return await axios
+    .delete(`${API_URL}/cart/delete/${id}`,
+      {
+        withCredentials: true
+      })
     .then((response) => {
       return response.data
     })

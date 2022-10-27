@@ -10,7 +10,7 @@ export default function LoginComponent () {
       if (isLogged) {
         window.location.href = '/'
       }
-    }, 1000)
+    }, 500)
   }, [isLogged])
 
   return (
@@ -34,7 +34,6 @@ export default function LoginComponent () {
             <div className='w-full mt-[-80px] flex justify-center'>
               <button
                 className='Button mt-[-50px] sm:mt-8 mb-14 focus:outline-none  bg-blue-800 py-2 text-gray-300 px-10 rounded-md w-9/12'
-                variant='success'
                 type='submit'
                 onClick={(e) => {
                   e.preventDefault()

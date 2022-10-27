@@ -8,7 +8,7 @@ export default function RegisterComponent () {
       if (isRegister) {
         window.location.href = '/login'
       }
-    }, 1000)
+    }, 500)
   }, [isRegister])
   return (
     <div className='Login mb-[-30px] grid h-[80vh] place-items-center'>
@@ -56,7 +56,6 @@ export default function RegisterComponent () {
           <div className='w-full mt-[-80px] sm:mt-[-30px] flex justify-center'>
             <button
               className='Button mt-[-55px] sm:mt-[-40px] mb-1 focus:outline-none  bg-blue-800 py-2 text-gray-300 px-10 rounded-md w-10/12'
-              variant='success'
               type='submit'
               onClick={(e) => {
                 e.preventDefault()
