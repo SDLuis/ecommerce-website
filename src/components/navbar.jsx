@@ -27,6 +27,9 @@ export default function NavbarComponent () {
     } else {
       return (
         <a href='/login'>
+          <p className='text-white fixed dark:text-gray-700'>
+            .
+          </p>
           <Login />
         </a>
       )

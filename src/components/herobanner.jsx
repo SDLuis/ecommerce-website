@@ -1,6 +1,6 @@
 export default function HeroBannerComponent ({ products }) {
   return (
-    <div className='flex justify-center mt-5 sm:mt-10'>
+    <div className='flex justify-center mt-0 sm:mt-10'>
       <div className='py-[100px] px-[30px] sm:px-[40px] dark:bg-gray-800 bg-[#dcdcdc] md:rounded-2xl relative h-[500px] leading-[0.9] w-screen md:w-[90%]'>
         <p className='text-xl dark:text-gray-200'>{products[0].smallText}</p>
         <h3 className='text-[4rem] ml-[-8px] sm:ml-0 mt-1 dark:text-gray-600'>{products[0].midText}</h3>
