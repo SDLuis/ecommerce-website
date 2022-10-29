@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const API_URL = 'https://sdl-ecommerce-api.herokuapp.com'
 
@@ -16,7 +18,7 @@ export const Login = async (useremail: any, password: any): Promise<any> => {
       return res.data
     })
     .catch((err) => {
-      console.log(err)
+      toast.error(`${err}`)
     })
 }
 
@@ -32,6 +34,6 @@ export const register = async (body: any): Promise<any> => {
       return response.data
     })
     .catch((err) => {
-      console.log(err)
+      toast.error(`${err}`)
     })
 }

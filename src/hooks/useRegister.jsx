@@ -36,7 +36,7 @@ export function UseRegister () {
           }
         })
         .catch((err) => {
-          console.log(err)
+          toast.error(`${err}`)
         })
     } else {
       toast.error('Rellene todos los campos')
