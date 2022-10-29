@@ -2,7 +2,9 @@ import { useState, useEffect, useContext } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
 import UseUser from './useUser'
 import { ProductContext } from '../context/product.context'
-import { ownProductsInCart, addProductsToCart, deleteProductsFromtCart, addQtyInCart, lessQtyInCart, EditQtyInCart } from '../services/products.service'
+import getStripe from '../lib/getStripe'
+import { ownProductsInCart, addProductsToCart, deleteProductsFromtCart, addQtyInCart, lessQtyInCart, EditQtyInCart, clearCart } from '../services/products.service'
+import axios from 'axios'
 
 export default function UseCart () {
   const { isLogged } = UseUser()
@@ -28,6 +30,57 @@ export default function UseCart () {
       : null
   }, [])
 
+  const handleCheckout = async () => {
+    const stripe = await getStripe()
+
+    const response = await fetch('https://sdl-ecommerce-api.herokuapp.com/cart/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(cartItems)
+    })
+
+    if (response.statusCode === 500) return
+
+    const data = await response.json()
+
+    toast.loading('Redirecting...')
+
+    stripe.redirectToCheckout({ sessionId: data.id })
+  }
+
+  const buySingleItem = async (item, qty) => {
+    const stripe = await getStripe()
+
+    const response = await axios.post('https://sdl-ecommerce-api.herokuapp.com/cart/stripe/single', {
+      Product_ID: item.Product_ID,
+      Product_Name: item.Product_Name,
+      price: item.price,
+      quantity: qty,
+      img: item.img
+    })
+
+    if (response.statusCode === 500) return
+
+    const data = await response.data
+
+    toast.loading('Redirecting...')
+
+    stripe.redirectToCheckout({ sessionId: data.id })
+  }
+
+  const ClearCart = async () => {
+    toast.promise(
+      clearCart()
+      ,
+      {
+        loading: 'Loading...',
+        success: <b>Thanks for your purchase!</b>,
+        error: <b>Error</b>
+      }
+    )
+  }
   const onAdd = async (id, name, price, qty, img) => {
     if (isLogged) {
       const body = { id, name, price, qty, img }
@@ -123,5 +176,5 @@ export default function UseCart () {
       }
     }
   }
-  return { showCart, setShowCart, cartItems, totalPrice, onAdd, onDelete, Toaster, addQty, lessQty, editQty, toggleCartItemQuanitity }
+  return { showCart, setShowCart, cartItems, totalPrice, ownProductsInCart, onAdd, onDelete, Toaster, addQty, lessQty, editQty, ClearCart, buySingleItem, toggleCartItemQuanitity, handleCheckout }
 }

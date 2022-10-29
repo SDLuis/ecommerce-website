@@ -3,7 +3,7 @@ import '../styles/general.css'
 import UseCart from '../hooks/useCart'
 
 export default function CartComponet () {
-  const { onDelete, cartItems, toggleCartItemQuanitity, totalPrice, setShowCart, editQty } = UseCart()
+  const { onDelete, cartItems, toggleCartItemQuanitity, totalPrice, setShowCart, editQty, handleCheckout } = UseCart()
   return (
     <div className='cart-wrapper w-screen bg-[#00000080] h-screen fixed right-0 top-0 bottom-0 z-[100] transition-all duration-1000 ease-in-out'>
       <div className='cart-container p-1 h-screen w-screen  md:w-[650px] dark:bg-gray-700 bg-white float-right relative py-0 px-0 sm:px-[10px]'>
@@ -76,7 +76,7 @@ export default function CartComponet () {
               </h3>
             </div>
             <div className='m-auto w-[300px]'>
-              <button type='button' className='btn w-full max-w-[400px] rounded-[15px] border-none py-[10px] px-[12px] text-xl mt-10 uppercase bg-[#f02d34] text-white cursor-pointer scale-[1,1] duration-500 transform ease-in-out hover:scale-110'>
+              <button type='button' onClick={handleCheckout} className='btn w-full max-w-[400px] rounded-[15px] border-none py-[10px] px-[12px] text-xl mt-10 uppercase bg-[#f02d34] text-white cursor-pointer scale-[1,1] duration-500 transform ease-in-out hover:scale-110'>
                 Pay with Stripe
               </button>
             </div>

@@ -115,6 +115,7 @@ export const ownProducts = async (): Promise<any> => {
       return response.data
     })
 }
+
 export const ownProductsInCart = async (): Promise<any> => {
   return await axios
     .get(`${API_URL}/cart/owner`, {
@@ -179,6 +180,15 @@ export const editProducts = async (jobID: number, body: any): Promise<any> => {
 export const deleteProducts = async (productsID: number): Promise<any> => {
   return await axios
     .delete(`${API_URL}/products/delete/${productsID}`, {
+      withCredentials: true
+    })
+    .then((response) => {
+      return response.data
+    })
+}
+export const clearCart = async (): Promise<any> => {
+  return await axios
+    .delete(`${API_URL}/cart/clearCart`, {
       withCredentials: true
     })
     .then((response) => {
