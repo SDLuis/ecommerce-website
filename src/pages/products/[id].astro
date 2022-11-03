@@ -1,18 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import PageProductDetails from '../../components/PageProductDetails';
-import { getProduct } from '../../services/products.service'
+import { getProduct, findProducts } from '../../services/products.service'
 
-export async function getStaticPaths() {
-  const products = await getProduct();
-  return products.map((p: any) => {
-    return {
-      params: { id: p.Product_ID.toString() },
-      props: { product: p },
-    };
-  });
-}
-const { product } = Astro.props;
+const { id } = Astro.params
+const product = await findProducts(id as any)
 const products = await getProduct()
 ---
 
