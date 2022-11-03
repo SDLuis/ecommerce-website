@@ -46,7 +46,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-        
+
   deploy:
     needs: [build, lint]
     runs-on: ubuntu-18.04
@@ -59,3 +59,5 @@ jobs:
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_APP_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_APP_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+          NETLIFY_DEPLOY_TO_PROD: true
