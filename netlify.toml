@@ -1,10 +1,9 @@
 [build]
   command = "npm run build"
-  functions = "netlify/functions"
   publish = "dist"
 
 [functions]
-  directory = "functions"
+  directory = "./netlify/functions-internal/entry.mjs"
   node_bundler = "esbuild"
 
 [dev]
