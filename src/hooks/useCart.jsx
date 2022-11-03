@@ -14,12 +14,6 @@ export default function UseCart () {
   const [, setTotalQuantities] = useState(0)
   let foundProduct
 
-  const reload = () => {
-    setTimeout(() => {
-      window.location.reload(false)
-    }, 800)
-  }
-
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
     isLogged
@@ -81,31 +75,46 @@ export default function UseCart () {
       }
     )
   }
-  const onAdd = async (id, name, price, qty, img) => {
+  const onAdd = async (id, name, price, qty, img, product) => {
     if (isLogged) {
       const body = { id, name, price, qty, img }
       const myCart = await ownProductsInCart()
       const sameProduct = myCart.find(p => p.Product_ID === id)
       setTotalPrice((prevTotalPrice) => prevTotalPrice + price * qty)
+
       if (sameProduct) {
         toast.promise(
-          addQtyInCart(sameProduct.Cart_ID, qty),
+          addQtyInCart(sameProduct.Cart_ID, qty).then(() => {
+            setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * qty)
+            setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + qty)
+            // eslint-disable-next-line array-callback-return
+            const updatedCartItems = myCart.map((cartProduct) => {
+              if (cartProduct.Product_ID === product.Product_ID) {
+                return {
+                  ...cartProduct,
+                  quantity: cartProduct.quantity + qty
+                }
+              }
+            })
+            setCartItems(updatedCartItems)
+          }),
           {
             loading: 'Adding...',
             success: <b>{`${qty} ${name} added to your cart!`}</b>,
             error: <b>Error, Product(s) not added.</b>
-          },
-          reload()
+          }
         )
       } else {
         toast.promise(
-          addProductsToCart(body),
+          addProductsToCart(body).then(() => {
+            product.quantity = qty
+            setCartItems([...cartItems, { ...product }])
+          }),
           {
             loading: 'Adding...',
             success: <b>{`${qty} ${name} added to your cart!`}</b>,
             error: <b>Error, Product(s) not added.</b>
-          },
-          reload()
+          }
         )
       }
     } else {
@@ -113,12 +122,30 @@ export default function UseCart () {
     }
   }
 
+  const onRemove = (product) => {
+    toast.promise(
+      deleteProductsFromtCart(product.Cart_ID).then(() => {
+        foundProduct = cartItems.find((item) => item.Product_ID === product.Product_ID)
+        const newCartItems = cartItems.filter((item) => item.Product_ID !== product.Product_ID)
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity)
+        setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity)
+        setCartItems(newCartItems)
+      })
+      ,
+      {
+        loading: 'Loading...',
+        success: <b>{`${product.Product_Name} deleted from the cart.`}</b>,
+        error: <b>Error</b>
+      }
+    )
+  }
+
   const addQty = (id, qty) => {
-    addQtyInCart(id, qty).then(res => toast(`${res.message}`, { duration: 1000 }), reload())
+    addQtyInCart(id, qty).then(res => toast(`${res.message}`, { duration: 1000 }))
       .catch(err => toast.error(err))
   }
   const lessQty = (id, qty) => {
-    lessQtyInCart(id, qty).then(res => toast(`${res.message}`, { duration: 1000 }), reload())
+    lessQtyInCart(id, qty).then(res => toast(`${res.message}`, { duration: 1000 }))
       .catch(err => toast.error(err))
   }
 
@@ -131,16 +158,6 @@ export default function UseCart () {
     })
   }
 
-  const onDelete = (id, name) => {
-    if (isLogged) {
-      deleteProductsFromtCart(id).then(() => {
-        toast.success(`${name} deleted from the cart.`)
-        reload()
-      }).catch(err => toast.error(err))
-    } else {
-      window.location.href = '/login'
-    }
-  }
   const toggleCartItemQuanitity = (id, value) => {
     foundProduct = cartItems.find((item) => item.Cart_ID === id)
 
@@ -176,5 +193,5 @@ export default function UseCart () {
       }
     }
   }
-  return { showCart, setShowCart, cartItems, totalPrice, ownProductsInCart, onAdd, onDelete, Toaster, addQty, lessQty, editQty, ClearCart, buySingleItem, toggleCartItemQuanitity, handleCheckout }
+  return { showCart, setShowCart, cartItems, totalPrice, ownProductsInCart, onAdd, onRemove, Toaster, addQty, lessQty, editQty, ClearCart, buySingleItem, toggleCartItemQuanitity, handleCheckout }
 }

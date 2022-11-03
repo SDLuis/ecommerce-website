@@ -3,7 +3,7 @@ import '../styles/general.css'
 import UseCart from '../hooks/useCart'
 
 export default function CartComponet () {
-  const { onDelete, cartItems, toggleCartItemQuanitity, totalPrice, setShowCart, editQty, handleCheckout } = UseCart()
+  const { onRemove, cartItems, toggleCartItemQuanitity, totalPrice, setShowCart, editQty, handleCheckout } = UseCart()
   return (
     <div className='cart-wrapper w-screen bg-[#00000080] h-screen fixed right-0 top-0 bottom-0 z-[100] transition-all duration-1000 ease-in-out'>
       <div className='cart-container p-1 h-screen w-screen  md:w-[650px] dark:bg-gray-700 bg-white float-right relative py-0 px-0 sm:px-[10px]'>
@@ -55,7 +55,7 @@ export default function CartComponet () {
                   <button className='mt-[-52px] sm:mt-0' onClick={() => editQty(item.Cart_ID, item.quantity)}><Save /></button>
                   <button
                     type='button'
-                    onClick={() => onDelete(item.Cart_ID, item.Product_Name)}
+                    onClick={() => onRemove(item)}
                     className='remove-item text-2xl bg-transparent border-none text-[#f02d34] mt-[-50px] sm:mt-0 cursor-pointer'
                   >
                     <Delete />
