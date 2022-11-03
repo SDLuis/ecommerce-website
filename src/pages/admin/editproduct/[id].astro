@@ -1,0 +1,11 @@
+---
+import PageEditProduct from "../../../components/pageEditProduct"
+import Layout from "../../../layouts/Layout.astro"
+import { findProducts } from '../../../services/products.service'
+ const { id } = Astro.params
+---
+
+<Layout title="Admin Panel" description="Adding new product">
+    <PageEditProduct id={id} client:load />
+</Layout>
+

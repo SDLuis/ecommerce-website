@@ -159,17 +159,7 @@ export const editProducts = async (jobID: number, body: any): Promise<any> => {
   return await axios
     .put(
       `${API_URL}/products/edit/${jobID}`,
-      {
-        Product_Name: body.productName,
-        Product_Type: body.productType,
-        price: body.price,
-        quantity: body.quantity,
-        img: body.img,
-        smallText: body.smallText,
-        midText: body.midText,
-        largeText: body.largeText,
-        description: body.description
-      },
+      body,
       { withCredentials: true }
     )
     .then((response) => {
