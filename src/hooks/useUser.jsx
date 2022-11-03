@@ -44,8 +44,10 @@ export default function UseUser () {
     Cookies.remove('jwt2')
     setJWT(null)
     toast('Good bye', {
-      icon: '👋'
+      icon: '👋',
+      duration: 1000
     })
+    window.location.href = '/'
   }, [setJWT])
 
   return {

@@ -44,7 +44,7 @@ export default function ProductDetailsComponent ({ product }) {
             </p>
           </div>
           <div className='buttons flex gap-3 justify-center sm:justify-start sm:gap-[30px]'>
-            <button onClick={() => onAdd(product.Product_ID, product.Product_Name, product.price, qty, product.img)} type='button' className='add-to-cart dark:bg-gray-200 py-[10px] px-[20px] sm:px-[20px] sm:w-[200px] w-[140px] border border-solid border-[#f02d34] mt-10 text-[18px] font-medium bg-white text-[#f02d34] cursor-pointer scale-100 transform-cpu duration-500 ease-in-out hover:scale-[1.1]'>Add to Cart</button>
+            <button onClick={() => onAdd(product.Product_ID, product.Product_Name, product.price, qty, product.img, product)} type='button' className='add-to-cart dark:bg-gray-200 py-[10px] px-[20px] sm:px-[20px] sm:w-[200px] w-[140px] border border-solid border-[#f02d34] mt-10 text-[18px] font-medium bg-white text-[#f02d34] cursor-pointer scale-100 transform-cpu duration-500 ease-in-out hover:scale-[1.1]'>Add to Cart</button>
             <button onClick={() => buySingleItem(product, qty)} type='button' className='buy-now sm:w-[200px] w-[140px] py-[10px] px-[20px] bg-[#f02d34] border-none mt-10 text-[18px] font-medium cursor-pointer scale-100 transform-cpu duration-500 ease-in-out hover:scale-[1.1] text-white'>Buy Now</button>
           </div>
         </div>

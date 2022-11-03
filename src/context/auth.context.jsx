@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import Cookies from 'js-cookie'
 
-const authContext = React.createContext()
+const authContext = React.createContext({})
 
 export const AuthProvider = ({ children }) => {
   const [jwt, setJWT] = useState(
