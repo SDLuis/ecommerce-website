@@ -44,7 +44,7 @@ export default function LoginComponent () {
           <div>
             <p className='login-card-footer-text dark:text-gray-200 sm:mt-[-80px] mt-[-180px] text-lg'>
               Don't have an account?{' '}
-              <a href='/register' className='text-reset border-b text-gray-800 dark:text-gray-300'>
+              <a href='/register' className='border-b border-b-gray-800 dark:border-b-gray-300 text-gray-800 dark:text-gray-300'>
                 Register here
               </a>
             </p>

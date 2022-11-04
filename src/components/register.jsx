@@ -68,7 +68,7 @@ export default function RegisterComponent () {
           <div>
             <p className='login-card-footer-text dark:text-gray-200 mt-[-140px] sm:mt-[-60px] mb-[10px] text-lg'>
               Don't have an account?{' '}
-              <a href='/login' className='text-reset border-b text-gray-800 dark:text-gray-300'>
+              <a href='/login' className=' border-b-gray-800 dark:border-b-gray-300 text-gray-800 dark:text-gray-300'>
                 Log in here
               </a>
             </p>
