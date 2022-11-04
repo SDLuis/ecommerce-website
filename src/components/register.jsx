@@ -12,7 +12,7 @@ export default function RegisterComponent () {
   }, [isRegister])
   return (
     <div className='Login mb-[-30px] grid h-[80vh] place-items-center'>
-      <main className='w-full h-[80vh] bg-white dark:bg-gray-800 sm:rounded-lg sm:w-[451px] sm:h-[75vh] '>
+      <main className='w-full h-[80vh] bg-gray-200 dark:bg-gray-800 sm:rounded-lg sm:w-[451px] sm:h-[75vh] '>
         <div className='formulario w-full grid place-items-center h-full'>
           <center>
             <h2 className='font-medium text-2xl dark:text-gray-200 mb-[-40px]'>Register</h2>

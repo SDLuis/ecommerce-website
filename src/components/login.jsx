@@ -14,7 +14,7 @@ export default function LoginComponent () {
 
   return (
     <div className='Login grid mb-[-40px] h-[80vh] sm:h-[75vh] place-items-center'>
-      <main className='w-full h-[80vh] bg-white dark:bg-gray-800 sm:rounded-lg sm:w-[451px] sm:h-[70vh] '>
+      <main className='w-full h-[80vh] bg-gray-200 dark:bg-gray-800 sm:rounded-lg sm:w-[451px] sm:h-[70vh] '>
         <div className='formulario w-full grid place-items-center h-full'>
           <center>
             <h2 className='font-medium text-2xl dark:text-gray-200 mb-[0px]'>Welcome to SDL Headphones</h2>
