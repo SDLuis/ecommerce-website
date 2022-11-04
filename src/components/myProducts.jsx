@@ -24,24 +24,24 @@ export default function MyProducts () {
 
   return (
     <div className='h-screen grid place-items-center'>
-      <p className='text-gray-400 text-4xl font-bold'>My Products</p>
-      <div className='h-[80%] w-[80%] mt-[-50px] flex flex-col gap-8 rounded-md overflow-y-auto scrollbar dark:scrollbarDark bg-white dark:bg-gray-800'>
+      <p className='dark:text-gray-400 text-gray-600 text-4xl font-bold'>My Products</p>
+      <div className='h-[80%] w-[80%] mt-[-50px] flex flex-col gap-8 rounded-md overflow-y-auto scrollbar dark:scrollbarDark bg-gray-100 dark:bg-gray-800'>
         {myProducts.map((product) => {
           return (
-            <div key={product.Product_ID} className='h-[280px] p-5 flex bg-gray-900 text-black relative dark:text-gray-200'>
+            <div key={product.Product_ID} className='h-[280px] p-5 flex bg-gray-200 dark:bg-gray-900 text-black relative dark:text-gray-200'>
               <img className='w-[250px] h-[250px]' src={`${product.img}`} />
               <div className='grid grid-cols-1'>
                 <div className='grid grid-cols-4 gap-5'>
                   <div>
-                    <p className='text-gray-400'>Product Name</p>
+                    <p className='dark:text-gray-400 text-gray-500'>Product Name</p>
                     <p className='text-xl'>{product.Product_Name}</p>
                   </div>
                   <div>
-                    <p className='text-gray-400'>Quantity</p>
+                    <p className='dark:text-gray-400 text-gray-500'>Quantity</p>
                     <p className='text-xl'>{product.quantity}</p>
                   </div>
                   <div>
-                    <p className='text-gray-400'>Price</p>
+                    <p className='dark:text-gray-400 text-gray-500'>Price</p>
                     <p className='text-xl'>{product.price}</p>
                   </div>
                   <div className='absolute right-5 top-7 text-center'>
@@ -52,7 +52,7 @@ export default function MyProducts () {
                   </div>
                 </div>
                 <div className='grid grid-cols-1'>
-                  <p className='text-gray-400'>Descripcion</p>
+                  <p className='dark:text-gray-400 text-gray-500'>Descripcion</p>
                   <p>{product.description}</p>
                 </div>
               </div>
