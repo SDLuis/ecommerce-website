@@ -5,10 +5,11 @@ import { Login } from '../services/user.service'
 import { toast } from 'react-hot-toast'
 
 export default function UseUser () {
-  const { jwt, setJWT } = useContext(authContext)
+  const { jwt, setJWT, role } = useContext(authContext)
   const [password, setPassword] = useState('')
   const [useremail, setUseremail] = useState('')
-
+  // eslint-disable-next-line no-unneeded-ternary
+  const isAdmin = role === 'admin' ? true : false
   const checkFilledFields = useCallback(() => {
     if (useremail === '' || password === '') {
       return false
@@ -26,6 +27,7 @@ export default function UseUser () {
           } else {
             setJWT(res.data)
             Cookies.set('jwt2', `${res.data}`, { expires: 1 / 24 })
+            Cookies.set('e-role', `${res.role}`, { expires: 1 / 24 })
             toast.success('Login succesfull.')
           }
         })
@@ -42,6 +44,7 @@ export default function UseUser () {
 
   const logout = useCallback(() => {
     Cookies.remove('jwt2')
+    Cookies.remove('e-role')
     setJWT(null)
     toast('Good bye', {
       icon: '👋',
@@ -58,6 +61,7 @@ export default function UseUser () {
     setUseremail,
     password,
     setPassword,
-    checkFilledFields
+    checkFilledFields,
+    isAdmin
   }
 }

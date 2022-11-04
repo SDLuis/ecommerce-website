@@ -44,7 +44,9 @@ export default function UseEditProducts ({ id }) {
     body.append('midText', formData.midText)
     body.append('largeText', formData.largeText)
     body.append('description', formData.description)
-    return await editProducts(id, body).then(res => toast.success(`${res.message}`))
+    return await editProducts(id, body)
+      .then(res => toast.success(`${res.message}`))
+      .catch(err => toast.error(`${err}`))
   }
   return { formData, setFormData, editProduct }
 }

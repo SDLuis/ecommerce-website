@@ -4,8 +4,8 @@ export default function EditProducts ({ id }) {
   const { formData, setFormData, editProduct } = UseEditProducts({ id })
   return (
     <form className='h-screen grid place-items-center'>
-      <div className='w-[90%] sm:w-[80%] bg-white dark:bg-gray-800 rounded-md px-5 pb-5'>
-        <p className='font-bold text-gray-900 dark:text-gray-400 capitalize pt-4 pb-4 text-3xl'>Add products form</p>
+      <div className='w-[90%] mt-4 sm:w-[80%] bg-white dark:bg-gray-800 rounded-md px-5 pb-5'>
+        <p className='font-bold text-gray-900 dark:text-gray-400 capitalize pt-4 pb-4 text-3xl'>Edit products form</p>
         <div className='grid gap-6 mb-6 md:grid-cols-2'>
           <div>
             <label htmlFor='Product_Name' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'>Product name</label>

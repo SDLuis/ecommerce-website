@@ -133,7 +133,7 @@ export default function UseCart () {
       })
       ,
       {
-        loading: 'Loading...',
+        loading: 'Removing...',
         success: <b>{`${product.Product_Name} deleted from the cart.`}</b>,
         error: <b>Error</b>
       }

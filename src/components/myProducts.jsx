@@ -5,13 +5,14 @@ import { Remove, Edit } from './icons/icons'
 import { useEffect } from 'react'
 
 export default function MyProducts () {
-  const { myProducts, loading } = UseProducts({})
-  const { isLogged } = UseUser()
+  const { myProducts, loading, deleteProduct } = UseProducts({})
+  const { isLogged, isAdmin } = UseUser()
 
   useEffect(() => {
-    if (!isLogged) window.location.href = '/'
+    if (!isLogged || !isAdmin) window.location.href = '/'
   }, [])
   if (loading && myProducts.length === 0) return <div className='grid h-screen place-items-center'> <div className='text-5xl font-extrabold'>Loading products...</div></div>
+  if (!isAdmin) return
   if (loading === false && myProducts.length === 0) {
     return (
       <NotProductsFoundComponent
@@ -47,7 +48,7 @@ export default function MyProducts () {
                     <a href={`/admin/editproduct/${product.Product_ID}`}>
                       <button className='ml-5'> <Edit /></button>
                     </a>
-                    <button href='/' className='ml-5'> <Remove /></button>
+                    <button onClick={() => deleteProduct(product.Product_ID, product)} href='/' className='ml-5'> <Remove /></button>
                   </div>
                 </div>
                 <div className='grid grid-cols-1'>

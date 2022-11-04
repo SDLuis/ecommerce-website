@@ -36,20 +36,7 @@ export const getProductByName = async (productName: string): Promise<any> => {
 export const postProduct = async (body: any): Promise<any> => {
   return await axios
     .post(
-      `${API_URL}/produts/add`,
-      {
-        Product_Name: body.productName,
-        Product_Type: body.productType,
-        price: body.price,
-        quantity: body.quantity,
-        img: body.img,
-        smallText: body.smallText,
-        midText: body.midText,
-        largeText: body.largeText,
-        description: body.description
-      },
-      { withCredentials: true }
-    )
+      `${API_URL}/products/add`, body, { withCredentials: true })
     .then((res) => {
       return res
     })
