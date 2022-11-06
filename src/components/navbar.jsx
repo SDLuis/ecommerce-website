@@ -20,9 +20,9 @@ export default function NavbarComponent () {
         <>
           <div className='relative inline-block text-left'>
             <div>
-              <button type='button' onClick={() => setDropDown(!dropDown)} className='inline-flex w-full justify-center hover:bg-gray-200 rounded-md border bg-white dark:bg-gray-700 dark:text-gray-200 px-4 py-1 text-sm font-medium text-gray-700 shadow-sm dark:hover:bg-gray-800 focus:outline-none' id='menu-button' aria-expanded='true' aria-haspopup='true'>
+              <button type='button' onClick={() => setDropDown(!dropDown)} className='inline-flex w-full justify-center hover:bg-gray-200 rounded-md border bg-white dark:bg-gray-700 dark:text-gray-200 px-2 md:px-4 py-1 text-sm font-medium text-gray-700 shadow-sm dark:hover:bg-gray-800 focus:outline-none' id='menu-button' aria-expanded='true' aria-haspopup='true'>
                 Admin Panel
-                <svg className='-mr-1 ml-2 h-5 w-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
+                <svg className='-mr-1 ml-0 md:ml-2 h-5 w-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
                   <path fillRule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clipRule='evenodd' />
                 </svg>
               </button>
@@ -64,12 +64,12 @@ export default function NavbarComponent () {
   return (
     <div className='navbar-container mt-1 flex justify-between relative py-[6px] mx-[18px]'>
       <div className='logo flex dark:text-gray-200 text-gray-700 text-lg font-medium'>
-        <a className='mr-10 text-2xl' href='/'>SDL Headphones</a>
+        <a className='mr-10 text-[17px] md:text-2xl' href='/'>SDL Headphones</a>
         <div>
           {rendered ? adminPanel() : null}
         </div>
       </div>
-      <div className='flex gap-7'>
+      <div className='flex gap-3 md:gap-7'>
         {rendered ? userBarButton() : null}
       </div>
       {showCart && <CartComponet />}

@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function PageAddProduct ({ id }) {
   return (
-    <ProviderLayout>
+    <ProviderLayout marginTop='mt-40'>
       <PrivateRoute>
         <EditProducts id={id} />
       </PrivateRoute>

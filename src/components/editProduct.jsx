@@ -13,7 +13,7 @@ export default function EditProducts ({ id }) {
               value={formData.Product_Name}
               onChange={(e) => {
                 setFormData({ ...formData, Product_Name: e.target.value })
-              }} type='text' id='Product_Name' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Beats 44' required=''
+              }} type='text' id='Product_Name' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Beats 44' required
             />
           </div>
           <div>
@@ -22,7 +22,7 @@ export default function EditProducts ({ id }) {
               value={formData.Product_Type}
               onChange={(e) => {
                 setFormData({ ...formData, Product_Type: e.target.value })
-              }} type='text' id='Product_Type' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' required=''
+              }} type='text' id='Product_Type' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' required
             > <option value=''>Headphones Type</option>
               <option>Headphone</option>
               <option>Wired Headphone</option>
@@ -35,7 +35,7 @@ export default function EditProducts ({ id }) {
               value={formData.price}
               onChange={(e) => {
                 setFormData({ ...formData, price: e.target.value })
-              }} type='number' id='price' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='4,000' required=''
+              }} type='number' id='price' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='4,000' required
             />
           </div>
           <div>
@@ -44,7 +44,7 @@ export default function EditProducts ({ id }) {
               value={formData.quantity}
               onChange={(e) => {
                 setFormData({ ...formData, quantity: e.target.value })
-              }} type='number' id='quantity' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='5' required=''
+              }} type='number' id='quantity' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='5' required
             />
           </div>
           <div>
@@ -53,7 +53,7 @@ export default function EditProducts ({ id }) {
               value={formData.smallText}
               onChange={(e) => {
                 setFormData({ ...formData, smallText: e.target.value })
-              }} type='text' id='smallText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Small text' required=''
+              }} type='text' id='smallText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Small text' required
             />
           </div>
           <div>
@@ -62,7 +62,7 @@ export default function EditProducts ({ id }) {
               value={formData.midText}
               onChange={(e) => {
                 setFormData({ ...formData, midText: e.target.value })
-              }} type='text' id='midText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Mid text' required=''
+              }} type='text' id='midText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Mid text' required
             />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function EditProducts ({ id }) {
             value={formData.largeText}
             onChange={(e) => {
               setFormData({ ...formData, largeText: e.target.value })
-            }} type='text' id='largeText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Large text' required=''
+            }} type='text' id='largeText' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='Large text' required
           />
         </div>
         <div className='mb-6'>
@@ -80,7 +80,7 @@ export default function EditProducts ({ id }) {
           <input
             onChange={(e) => {
               setFormData({ ...formData, img: e.target.files[0] })
-            }} type='file' id='img' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' required=''
+            }} type='file' id='img' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' required
           />
         </div>
         <div className='mb-6'>
@@ -89,7 +89,7 @@ export default function EditProducts ({ id }) {
             value={formData.description}
             onChange={(e) => {
               setFormData({ ...formData, description: e.target.value })
-            }} type='text' id='description' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='This is the best product ever' required=''
+            }} type='text' id='description' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500' placeholder='This is the best product ever' required
           />
         </div>
         <button

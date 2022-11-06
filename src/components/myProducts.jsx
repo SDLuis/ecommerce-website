@@ -11,7 +11,7 @@ export default function MyProducts () {
   useEffect(() => {
     if (!isLogged || !isAdmin) window.location.href = '/'
   }, [])
-  if (loading && myProducts.length === 0) return <div className='grid h-screen place-items-center'> <div className='text-5xl font-extrabold'>Loading products...</div></div>
+  if (loading && myProducts.length === 0) return <div className='grid h-screen place-items-center'> <div className='md:text-5xl dark:text-gray-200 text-2xl font-extrabold'>Loading products...</div></div>
   if (!isAdmin) return
   if (loading === false && myProducts.length === 0) {
     return (
@@ -24,14 +24,14 @@ export default function MyProducts () {
 
   return (
     <div className='h-screen grid place-items-center'>
-      <p className='dark:text-gray-400 text-gray-600 text-4xl font-bold'>My Products</p>
-      <div className='h-[80%] w-[80%] mt-[-50px] flex flex-col gap-8 rounded-md overflow-y-auto scrollbar dark:scrollbarDark bg-gray-100 dark:bg-gray-800'>
+      <p className='dark:text-gray-400 mt-5 md:mt-0 text-gray-600 text-4xl font-bold'>My Products</p>
+      <div className='h-[80%] w-[90%] sm:w-[80%] mt-[-50px] flex flex-col gap-8 rounded-md overflow-y-auto scrollbar dark:scrollbarDark bg-gray-100 dark:bg-gray-800'>
         {myProducts.map((product) => {
           return (
-            <div key={product.Product_ID} className='h-[280px] p-5 flex bg-gray-200 dark:bg-gray-900 text-black relative dark:text-gray-200'>
-              <img className='w-[250px] h-[250px]' src={`${product.img}`} />
+            <div key={product.Product_ID} className='h-[800px] md:h-[280px] p-5 flex bg-gray-200 dark:bg-gray-900 text-black relative dark:text-gray-200'>
+              <img className='w-32 h-32 md:w-[250px] md:h-[250px]' src={`${product.img}`} />
               <div className='grid grid-cols-1'>
-                <div className='grid grid-cols-4 gap-5'>
+                <div className='grid grid-cols-2 md:grid-cols-4 gap-5'>
                   <div>
                     <p className='dark:text-gray-400 text-gray-500'>Product Name</p>
                     <p className='text-xl'>{product.Product_Name}</p>
@@ -44,7 +44,7 @@ export default function MyProducts () {
                     <p className='dark:text-gray-400 text-gray-500'>Price</p>
                     <p className='text-xl'>{product.price}</p>
                   </div>
-                  <div className='absolute right-5 top-7 text-center'>
+                  <div className='absolute left-2 bottom-2 sm:left-auto sm:bottom-auto sm:right-5 sm:top-7 text-center'>
                     <a href={`/admin/editproduct/${product.Product_ID}`}>
                       <button className='ml-5'> <Edit /></button>
                     </a>
