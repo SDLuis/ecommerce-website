@@ -10,7 +10,7 @@ export default function ProductDetailsComponent ({ product }) {
       <div className='product-detail-container flex flex-wrap gap-10 m-7 sm:m-10 mt-6 sm:mt-[60px]'>
         <div>
           <div className='image-container'>
-            <img src={product.img} className='product-detail-image dark:bg-gray-800 object-contain rounded-[15px] bg-[#ebebeb] w-auto h-auto sm:w-[400px] sm:h-[400px] cursor-pointer transform-cpu duration-300 ease-in-out hover:bg-[#f02d34]' />
+            <img src={product.img} className='product-detail-image dark:bg-[#2A2A2A] object-contain rounded-[15px] bg-[#ebebeb] w-auto h-auto sm:w-[400px] sm:h-[400px] cursor-pointer transform-cpu duration-300 ease-in-out hover:bg-[#f02d34]' />
           </div>
         </div>
 

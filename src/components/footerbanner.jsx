@@ -2,7 +2,7 @@ export default function FooterBannerComponent ({ product }) {
   const last = (product.length - 1)
   return (
     <div className='flex justify-center'>
-      <div className='py-[100px] px-3 sm:px-10 bg-[#f02d34] rounded-2xl relative h-[300px] sm:h-[400px] leading-[1] text-white w-[90%] mt-[120px]'>
+      <div className='py-[100px] px-3 sm:px-10 bg-red-600 rounded-2xl relative h-[300px] sm:h-[400px] leading-[1] text-white w-[90%] mt-[120px]'>
         <div className='flex justify-between'>
           <div className='left md:w-auto w-44 md:h-48 h-44 flex flex-col sm:justify-between'>
             <p>20% OFF</p>
@@ -15,7 +15,7 @@ export default function FooterBannerComponent ({ product }) {
             <h3 className='lg:text-6xl md:text-4xl text-3xl font-extrabold'>{product[last].midText}</h3>
             <p className='text-lg text-justify hidden md:block'>{product[last].description}</p>
             <a href={`/products/${product[last].Product_ID}`}>
-              <button className='rounded-[15px] mt-10 absolute lg:right-[20%] right-5 sm:ml-0 py-[10px] px-[10px] md:px-[40px] bg-white text-red-600 border-none lg:mt-10 text-lg font-medium cursor-pointer' type='button'>SHOP NOW</button>
+              <button className='rounded-[15px] mt-10 absolute lg:right-[20%] right-5 sm:ml-0 py-[10px] px-[10px] md:px-[40px] bg-black text-gray-100 border-none lg:mt-10 text-lg font-medium cursor-pointer' type='button'>SHOP NOW</button>
             </a>
           </div>
 
