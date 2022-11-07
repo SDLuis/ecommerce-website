@@ -4,7 +4,7 @@ import ProviderLayout from '../layouts/provider.layout'
 export default function PageLogin () {
   return (
     <div>
-      <ProviderLayout>
+      <ProviderLayout marginTop='mt-[10px]'>
         <RegisterComponent />
       </ProviderLayout>
     </div>

@@ -5,7 +5,7 @@ export default function PageLogin () {
   return (
     <div>
       <AuthProvider>
-        <ProviderLayout>
+        <ProviderLayout marginTop='mt-[10px]'>
           <LoginComponent />
         </ProviderLayout>
       </AuthProvider>
