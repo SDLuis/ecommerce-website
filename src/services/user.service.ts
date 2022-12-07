@@ -2,7 +2,7 @@
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
-const API_URL = 'https://sdl-ecommerce-api.herokuapp.com'
+const API_URL = 'https://sdl-ecommerce-api.up.railway.app'
 
 export const Login = async (useremail: any, password: any): Promise<any> => {
   return await axios

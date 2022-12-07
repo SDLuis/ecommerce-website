@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import axios from 'axios'
 
-const API_URL = 'https://sdl-ecommerce-api.herokuapp.com'
+const API_URL = 'https://sdl-ecommerce-api.up.railway.app'
 
 export const getProduct = async (): Promise<any> => {
   return await axios
