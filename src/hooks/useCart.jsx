@@ -27,7 +27,7 @@ export default function UseCart () {
   const handleCheckout = async () => {
     const stripe = await getStripe()
 
-    const response = await fetch('https://sdl-ecommerce-api.herokuapp.com/cart/stripe', {
+    const response = await fetch('https://sdl-ecommerce-api.up.railway.app/cart/stripe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -47,7 +47,7 @@ export default function UseCart () {
   const buySingleItem = async (item, qty) => {
     const stripe = await getStripe()
 
-    const response = await axios.post('https://sdl-ecommerce-api.herokuapp.com/cart/stripe/single', {
+    const response = await axios.post('https://sdl-ecommerce-api.up.railway.app/cart/stripe/single', {
       Product_ID: item.Product_ID,
       Product_Name: item.Product_Name,
       price: item.price,
